@@ -149,9 +149,9 @@ const VideoPreview: FC<{ file: OdFileObject }> = ({ file }) => {
           />
 
           <DownloadButton
-            onClickCallback={() => window.open(`iina://weblink?url=${getBaseUrl()}${videoUrl}`)}
-            btnText="IINA"
-            btnImage="/players/iina.png"
+            onClickCallback={() => window.open(`intent://${window?.location.hostname ?? ""}${videoUrl}#Intent;type=video/any;package=is.xyz.mpv;scheme=https;end;`)}
+            btnText="mpv"
+            btnImage="/players/mpv.png"
           />
           <DownloadButton
             onClickCallback={() => window.open(`vlc://${getBaseUrl()}${videoUrl}`)}
